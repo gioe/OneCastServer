@@ -10,3 +10,10 @@ class UserResource(ModelResource):
         resource_name = 'user'
         authorization = Authorization()
         serializer = Serializer()
+
+    def obj_create(self,bundle,**kwargs):
+        bundle = super(UserResource,self).obj_create(bundle,**kwargs)
+
+        # Add code here
+
+        return bundle

@@ -32,7 +32,19 @@ ALLOWED_HOSTS = []
 
 SITE_ID = 1
 
-# Application definition
+BROKER_URL = "amqp://myuser:mypassword@localhost:5672/myvhost"
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'US/Eastern'
+
+TIME_INPUT_FORMATS = [
+    '%H:%M:%S',     # '14:30:59'
+    '%H:%M:%S.%f',  # '14:30:59.000200'
+    '%H:%M',
+    '%I:%M %p',      # '14:30'
+]
 
 INSTALLED_APPS = [
     'notifications',
@@ -43,7 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'tastypie'
+    'tastypie',
 ]
 
 MIDDLEWARE_CLASSES = [
