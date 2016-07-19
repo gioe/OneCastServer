@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from OneCastServer.api import UserResource
+admin.autodiscover()
 
-user_resource = UserResource()
+from tastypie.api import Api
+from OneCastServer.api import TokenResource, UserResource
+
+v1_api = Api(api_name='v1')
+v1_api.register(UserResource())
+v1_api.register(TokenResource())
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(user_resource.urls)),
+    url(r'^api/', include(v1_api.urls)),
 ]

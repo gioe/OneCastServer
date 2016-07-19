@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import gettext as _
 from django import forms
 
-class User(models.Model):
+class Token(models.Model):
     device_token = models.CharField("Token", blank=True, null=True, max_length=255)
     zip_code = models.CharField("Zip Code", max_length=255, blank=True, null=True)
     notification_time = models.TimeField("Notification Time", blank=True)
