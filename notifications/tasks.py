@@ -10,6 +10,4 @@ logger = logging.getLogger(__name__)
 
 @shared_task
 def check_weather_for_user(token_id):
-    current_user = Token.objects.get(id=token_id)
-    response = api.check_weather_at_location(longitude=current_user_location_longitude, latitude=current_user_location_latitude)
-    
+    response = api.check_for_rain_at_location(token_id=token_id)
