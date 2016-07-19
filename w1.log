@@ -1,0 +1,35 @@
+[2016-07-19 17:39:49,952: INFO/MainProcess] Connected to amqp://myuser:**@127.0.0.1:5672/myvhost
+[2016-07-19 17:39:49,975: INFO/MainProcess] mingle: searching for neighbors
+[2016-07-19 17:39:50,987: INFO/MainProcess] mingle: all alone
+[2016-07-19 17:39:51,007: WARNING/MainProcess] /Users/mattgioe/.virtualenvs/OneCastDev/lib/python3.5/site-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2016-07-19 17:39:51,008: WARNING/MainProcess] w1@Matts-MacBook.local ready.
+[2016-07-19 18:08:02,079: INFO/MainProcess] sync with celery@Matts-MacBook.local
+[2016-07-19 18:10:39,207: INFO/MainProcess] sync with celery@Matts-MacBook.local
+[2016-07-19 18:14:40,261: ERROR/MainProcess] Received unregistered task of type 'notifications.tasks.check_weather_for_user'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you are using relative imports?
+Please see http://bit.ly/gLye1c for more information.
+
+The full contents of the message body was:
+{'chord': None, 'expires': None, 'taskset': None, 'args': [16], 'utc': True, 'timelimit': [None, None], 'errbacks': None, 'task': 'notifications.tasks.check_weather_for_user', 'kwargs': {}, 'callbacks': None, 'eta': None, 'retries': 0, 'id': '4d1efe37-9669-4d4f-aaaf-5e4a85a67faa'} (281b)
+Traceback (most recent call last):
+  File "/Users/mattgioe/.virtualenvs/OneCastDev/lib/python3.5/site-packages/celery/worker/consumer.py", line 456, in on_task_received
+    strategies[name](message, body,
+KeyError: 'notifications.tasks.check_weather_for_user'
+[2016-07-19 18:26:30,478: ERROR/MainProcess] Received unregistered task of type 'notifications.tasks.check_weather_for_user'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you are using relative imports?
+Please see http://bit.ly/gLye1c for more information.
+
+The full contents of the message body was:
+{'chord': None, 'expires': None, 'taskset': None, 'args': [16], 'utc': True, 'timelimit': [None, None], 'errbacks': None, 'task': 'notifications.tasks.check_weather_for_user', 'kwargs': {}, 'callbacks': None, 'eta': None, 'retries': 0, 'id': 'f7c7bb0a-ef55-41b5-8e5f-bc3234b5e37b'} (281b)
+Traceback (most recent call last):
+  File "/Users/mattgioe/.virtualenvs/OneCastDev/lib/python3.5/site-packages/celery/worker/consumer.py", line 456, in on_task_received
+    strategies[name](message, body,
+KeyError: 'notifications.tasks.check_weather_for_user'

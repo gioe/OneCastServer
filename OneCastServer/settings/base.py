@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 SITE_ID = 1
 
 BROKER_URL = "amqp://myuser:mypassword@localhost:5672/myvhost"
+FORECAST_API_KEY = "fa7fa58be6b3961fdd2486e753b0136d"
 
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
