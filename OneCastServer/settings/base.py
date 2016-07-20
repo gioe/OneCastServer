@@ -57,7 +57,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'tastypie',
+    'push_notifications'
 ]
+
+PUSH_NOTIFICATIONS_SETTINGS = {
+        "APNS_CERTIFICATE": "/Users/mattgioe/Desktop/OneCastServer/OneCastServer/OneCast.pem",
+}
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

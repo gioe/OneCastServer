@@ -1,4 +1,5 @@
 import json
+from push_notifications.models import APNSDevice
 from django.contrib.auth.models import User
 from tastypie.serializers import Serializer
 from tastypie.resources import ModelResource
@@ -18,9 +19,20 @@ class TokenResource(ModelResource):
         serializer = Serializer()
         always_return_data = True
 
-    def obj_create(self,bundle,**kwargs):
-        bundle = super(TokenResource,self).obj_create(bundle,**kwargs)
+    def obj_create(self, bundle, request=None, **kwargs):
+        bundle = super(TokenResource, self).obj_create(bundle, request=request, **kwargs)
+        if bundle.data['device_token']:
+            device, created = APNSDevice.objects.get_or_create(registration_id=bundle.data['device_token'])
+            if created:
+                device.save
 
-        # Add code here
+        return bundle
+
+    def obj_update(self, bundle, request=None, **kwargs):
+        bundle = super(TokenResource, self).obj_create(bundle, request=request, **kwargs)
+        if bundle.data['device_token']:
+            device, created = APNSDevice.objects.get_or_create(registration_id=bundle.data['device_token'])
+            if created:
+                device.save
 
         return bundle
