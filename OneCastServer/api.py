@@ -34,8 +34,10 @@ class TokenResource(ModelResource):
                 today_date =  datetime.today()
                 combination = datetime.combine(today_date, time)
                 eta = local_zone.localize(combination)
+                local_datetime = local_zone.localize(datetime.now())
+                delta = eta - local_datetime
                 device_token=bundle.data['device_token']
-                check_weather_for_user.apply_async((device_token,), eta=eta)
+                check_weather_for_user.apply_async((device_token,), eta=eta, countdown=delta.total_seconds() + 60)
 
         return bundle
 

@@ -34,11 +34,13 @@ ALLOWED_HOSTS = []
 SITE_ID = 1
 FORECAST_API_KEY = "fa7fa58be6b3961fdd2486e753b0136d"
 
-CELERY_ACCEPT_CONTENT = ['json']
+BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
-CELERY_ENABLE_UTC = True
+CELERY_ENABLE_UTC = False
 djcelery.setup_loader()
 
 TIME_INPUT_FORMATS = [
