@@ -10,9 +10,9 @@ from django.db import transaction
 from django.conf import settings
 from django.core.exceptions import ValidationError
 
-def check_for_rain_at_location(token_id):
-    current_user = models.Token.objects.get(id=token_id)
-    device = APNSDevice.objects.get(registration_id=current_user.device_token)
+def check_for_rain_at_location(device_token):
+    current_user = models.Token.objects.get(device_token=device_token)
+    device = APNSDevice.objects.get(registration_id=device_token)
     api_key = settings.FORECAST_API_KEY
     lat = current_user.location_latitude
     lng = current_user.location_longitude

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 from django.core.exceptions import ImproperlyConfigured
+import djcelery
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,14 +32,14 @@ SECRET_KEY = get_env_variable('SECRET_KEY')
 ALLOWED_HOSTS = []
 
 SITE_ID = 1
-
-BROKER_URL = "amqp://myuser:mypassword@localhost:5672/myvhost"
 FORECAST_API_KEY = "fa7fa58be6b3961fdd2486e753b0136d"
 
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'US/Eastern'
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+CELERY_ENABLE_UTC = True
+djcelery.setup_loader()
 
 TIME_INPUT_FORMATS = [
     '%H:%M:%S',     # '14:30:59'
@@ -57,7 +58,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'tastypie',
-    'push_notifications'
+    'push_notifications',
+    'djcelery',
+    'kombu.transport.django',
 ]
 
 PUSH_NOTIFICATIONS_SETTINGS = {

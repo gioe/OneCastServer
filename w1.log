@@ -33,3 +33,43 @@ Traceback (most recent call last):
   File "/Users/mattgioe/.virtualenvs/OneCastDev/lib/python3.5/site-packages/celery/worker/consumer.py", line 456, in on_task_received
     strategies[name](message, body,
 KeyError: 'notifications.tasks.check_weather_for_user'
+[2016-07-21 01:53:38,573: ERROR/MainProcess] Received unregistered task of type 'notifications.tasks.check_weather_for_user'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you are using relative imports?
+Please see http://bit.ly/gLye1c for more information.
+
+The full contents of the message body was:
+{'chord': None, 'expires': None, 'taskset': None, 'args': ['41976be35ae5e1c232e30c5c03e01439290c7ac33c9db51130736c7c52034531'], 'utc': False, 'timelimit': [None, None], 'errbacks': None, 'task': 'notifications.tasks.check_weather_for_user', 'kwargs': {}, 'callbacks': None, 'eta': None, 'retries': 0, 'id': 'a919f70a-9e08-41d9-8f6e-73130531700b'} (346b)
+Traceback (most recent call last):
+  File "/Users/mattgioe/.virtualenvs/OneCastDev/lib/python3.5/site-packages/celery/worker/consumer.py", line 456, in on_task_received
+    strategies[name](message, body,
+KeyError: 'notifications.tasks.check_weather_for_user'
+[2016-07-21 02:03:27,712: ERROR/MainProcess] Received unregistered task of type 'notifications.tasks.check_weather_for_user'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you are using relative imports?
+Please see http://bit.ly/gLye1c for more information.
+
+The full contents of the message body was:
+{'chord': None, 'expires': None, 'taskset': None, 'args': ['ad3b686194e135c17e25d4dfa833c8d36315ea60a25ee6da432f11a5fb23e0e5'], 'utc': False, 'timelimit': [None, None], 'errbacks': None, 'task': 'notifications.tasks.check_weather_for_user', 'kwargs': {}, 'callbacks': None, 'eta': None, 'retries': 0, 'id': '97bd8d58-d681-4c0b-972e-82dd743d6ff6'} (346b)
+Traceback (most recent call last):
+  File "/Users/mattgioe/.virtualenvs/OneCastDev/lib/python3.5/site-packages/celery/worker/consumer.py", line 456, in on_task_received
+    strategies[name](message, body,
+KeyError: 'notifications.tasks.check_weather_for_user'
+[2016-07-21 02:29:01,309: INFO/MainProcess] sync with celery@Matts-MacBook.local
+[2016-07-21 02:32:40,840: ERROR/MainProcess] Received unregistered task of type 'notifications.tasks.check_weather_for_user'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you are using relative imports?
+Please see http://bit.ly/gLye1c for more information.
+
+The full contents of the message body was:
+{'chord': None, 'expires': None, 'taskset': None, 'args': ['e5070824f488c3dd46c7abf0b2e99fb9fe5065b8831079e2e714a30bed078b73'], 'utc': False, 'timelimit': [None, None], 'errbacks': None, 'task': 'notifications.tasks.check_weather_for_user', 'kwargs': {}, 'callbacks': None, 'eta': None, 'retries': 0, 'id': '842f2f5e-0016-4fe3-8ce0-ff2718705871'} (346b)
+Traceback (most recent call last):
+  File "/Users/mattgioe/.virtualenvs/OneCastDev/lib/python3.5/site-packages/celery/worker/consumer.py", line 456, in on_task_received
+    strategies[name](message, body,
+KeyError: 'notifications.tasks.check_weather_for_user'
