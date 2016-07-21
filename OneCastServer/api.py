@@ -31,13 +31,13 @@ class TokenResource(ModelResource):
                 date_object = datetime.strptime(bundle.data['notification_time'], '%H:%M:%S')
                 time = date_object.time()
                 local_zone = get_localzone()
-                today_date =  datetime.today()
-                combination = datetime.combine(today_date, time)
+                tomorrow =  datetime.today() +  timedelta(days=1)
+                combination = datetime.combine(tomorrow, time)
                 eta = local_zone.localize(combination)
                 local_datetime = local_zone.localize(datetime.now())
                 delta = eta - local_datetime
                 device_token=bundle.data['device_token']
-                check_weather_for_user.apply_async((device_token,), eta=eta, countdown=delta.total_seconds() + 60)
+                check_weather_for_user.apply_async((device_token,), countdown=delta.total_seconds() + 60)
 
         return bundle
 
