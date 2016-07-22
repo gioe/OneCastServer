@@ -110,7 +110,7 @@ DATABASES = {
 CACHES = {
     "default": {
          "BACKEND": "redis_cache.RedisCache",
-         "LOCATION": "{0}:{1}".format(redis_url.hostname, redis_url.port),
+         "LOCATION": "{0}:{1}".format('ec2-54-197-242-4.compute-1.amazonaws.com', '8299'),
          "OPTIONS": {
              "PASSWORD": 'pe17595jcsnmfc8ja020o1mrpgs',
              "DB": 0,
