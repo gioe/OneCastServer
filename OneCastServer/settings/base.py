@@ -29,6 +29,9 @@ def get_env_variable(var_name):
 
 SECRET_KEY =  "1&bf4v-=i2#je7lp%xo(0m0dw8e-#tsyg0u43teo-8nd^m(+-9"
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+
 ALLOWED_HOSTS = []
 
 SITE_ID = 1
