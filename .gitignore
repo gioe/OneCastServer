@@ -1,2 +1,6 @@
+*.pyc
 db.sqlite3
-*/__pycache__
+myvenv
+__pycache__
+local_settings.py
+OneCastServer/settings
