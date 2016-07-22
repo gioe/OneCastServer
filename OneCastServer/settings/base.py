@@ -172,5 +172,5 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 PUSH_NOTIFICATIONS_SETTINGS = {
-        "APNS_CERTIFICATE": 'https://s3.amazonaws.com/onecast/OneCast.pem',
+        "APNS_CERTIFICATE": os.path.abspath(os.path.dirname(__file__) + '/../../OneCast.pem'),
 }
