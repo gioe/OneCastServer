@@ -36,7 +36,7 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 CELERY_ENABLE_UTC = False
-djcelery.setup_loader()
+# djcelery.setup_loader()
 
 # Application definition
 
