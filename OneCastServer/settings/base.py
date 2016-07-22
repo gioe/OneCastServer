@@ -120,9 +120,8 @@ WSGI_APPLICATION = 'OneCastServer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {}
-DATABASES['default'] =  dj_database_url.config(default='postgres://user:pass@host/db')
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+DATABASES = {'default': dj_database_url.config()}
+
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
