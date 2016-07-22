@@ -29,8 +29,15 @@ def get_env_variable(var_name):
 
 SECRET_KEY =  "1&bf4v-=i2#je7lp%xo(0m0dw8e-#tsyg0u43teo-8nd^m(+-9"
 
+SITE_ROOT = dirname(DJANGO_ROOT)
+
+# Site name:
+SITE_NAME = basename(DJANGO_ROOT)
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = normpath(join(SITE_ROOT, 'static'))
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
+STATIC_URL = '/static/'
 
 ALLOWED_HOSTS = []
 
