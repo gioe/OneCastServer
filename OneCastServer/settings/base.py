@@ -9,7 +9,14 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 import os
 import dj_database_url
+from urllib.parse import urlparse
 
+def get_env_variable(var_name):
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        error_msg = "Set the %s environment variable" % var_name
+        raise ImproperlyConfigured(error_msg)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -29,8 +36,8 @@ ALLOWED_HOSTS = [".herokuapp.com"]
 SITE_ID = 1
 FORECAST_API_KEY = "fa7fa58be6b3961fdd2486e753b0136d"
 
-BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+BROKER_URL = redis_url
+CELERY_RESULT_BACKEND = redis_url
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
@@ -98,13 +105,13 @@ DATABASES = {
     }
 }
 
-redis_url = urlparse.urlparse(os.environ.get('REDIS_URL'))
+redis_url = 'redis://h:pe17595jcsnmfc8ja020o1mrpgs@ec2-54-197-242-4.compute-1.amazonaws.com:8299'
 CACHES = {
     "default": {
          "BACKEND": "redis_cache.RedisCache",
          "LOCATION": "{0}:{1}".format(redis_url.hostname, redis_url.port),
          "OPTIONS": {
-             "PASSWORD": redis_url.password,
+             "PASSWORD": 'pe17595jcsnmfc8ja020o1mrpgs',
              "DB": 0,
          }
     }
