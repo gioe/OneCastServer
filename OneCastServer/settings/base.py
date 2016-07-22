@@ -1,5 +1,5 @@
 """
-Django settings for gettingstarted project, on Heroku. For more info, see:
+Django settings for OneCastServer project, on Heroku. For more info, see:
 https://github.com/heroku/heroku-django-template
 For more information on this file, see
 https://docs.djangoproject.com/en/1.8/topics/settings/
@@ -66,7 +66,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'gettingstarted.urls'
+ROOT_URLCONF = 'OneCastServer.urls'
 
 TEMPLATES = [
     {
@@ -85,7 +85,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'gettingstarted.wsgi.application'
+WSGI_APPLICATION = 'OneCastServer.wsgi.application'
 
 
 # Database
