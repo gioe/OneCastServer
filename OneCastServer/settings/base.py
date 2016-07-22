@@ -41,8 +41,7 @@ STATIC_ROOT = normpath(join(SITE_ROOT, 'static'))
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [".herokuapp.com"]
 SITE_ID = 1
 FORECAST_API_KEY = "fa7fa58be6b3961fdd2486e753b0136d"
 
