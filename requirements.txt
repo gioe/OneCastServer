@@ -41,4 +41,3 @@ tzlocal==1.2.2
 tzwhere==2.3
 unicodecsv==0.14.1
 whitenoise==3.2
-(OneCastDev) Matts-
