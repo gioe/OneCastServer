@@ -35,6 +35,7 @@ DEBUG = True
 ALLOWED_HOSTS = [".herokuapp.com"]
 SITE_ID = 1
 FORECAST_API_KEY = "fa7fa58be6b3961fdd2486e753b0136d"
+redis_url = 'redis://h:pe17595jcsnmfc8ja020o1mrpgs@ec2-54-197-242-4.compute-1.amazonaws.com:8299'
 
 BROKER_URL = redis_url
 CELERY_RESULT_BACKEND = redis_url
@@ -105,7 +106,7 @@ DATABASES = {
     }
 }
 
-redis_url = 'redis://h:pe17595jcsnmfc8ja020o1mrpgs@ec2-54-197-242-4.compute-1.amazonaws.com:8299'
+
 CACHES = {
     "default": {
          "BACKEND": "redis_cache.RedisCache",
